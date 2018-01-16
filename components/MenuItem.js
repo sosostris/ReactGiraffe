@@ -2,27 +2,16 @@ import React from 'react';
 
 export default class MenuItem extends React.Component {
 
-    constructor(props, context) {
-        super(props, context);
-
-        this.state = {
-            checked: true
-        };
-    };
+    constructor(props) {
+        super(props);
+    }
 
     render () {
-        if (this.state.checked) {
-            return (
-                <div>
-                    <button onClick={this.props.onClick}>ooooooooo</button>
-                </div>
-            )
-        } else {
-            return (
-                <div>
-                    <button onClick={this.props.onClick}>{this.props.name}</button>
-                </div>
-            )
-        }
+        return (
+            <div>
+                <button style={this.props.style} onClick={this.props.handleClick}>{this.props.name}</button>
+            </div>
+        )
     }
+
 }

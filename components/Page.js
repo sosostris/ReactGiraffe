@@ -5,8 +5,7 @@ export default class Page extends React.Component {
     render () {
         return (
             <div>
-                <Menu>Hi hi th</Menu>
-                <Menu>Oh</Menu>
+                <Menu></Menu>
                 <div id="mainContent">omg</div>
             </div>
         );
