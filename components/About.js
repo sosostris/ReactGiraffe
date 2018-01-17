@@ -1,10 +1,11 @@
 import React from 'react';
+import Hi from './Hi';
 
 export default class About extends React.Component {
     render () {
         return (
             <div>
-                <div>Hi I'm a about component</div>
+                <div style={{height:'700px'}}>I'm ABOUT</div>
             </div>
         )
     }

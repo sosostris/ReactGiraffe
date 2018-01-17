@@ -3,8 +3,8 @@ import React from 'react';
 export default class Hi extends React.Component {
     render () {
         return (
-            <div>
-                <div>Hi I'm a Hi component</div>
+            <div style={{height:'800px', backgroundColor:'red'}}>
+                <div>I'm HI</div>
             </div>
         )
     }
