@@ -1,8 +1,9 @@
 import React from 'react';
-import MenuItem from './MenuItem';
-import Hi from './Hi';
-import About from './About';
 import ReactDOM from "react-dom";
+import MenuItem from './MenuItem';
+import Page from './Page';
+import AnotherPage from './AnotherPage';
+
 
 export default class Menu extends React.Component {
 
@@ -11,21 +12,27 @@ export default class Menu extends React.Component {
         this.renderMenuItem = this.renderMenuItem.bind(this);
 
         this.state = {
+
             menuItems: [
                 {
+                    name: "Miao",
+                    link: <Page />,
+                    underline: false,
+                },
+                {
+                    name: "Wang",
+                    link: <AnotherPage/>,
+                    underline: false,
+                },
+                {
+                    name: "About",
+                    link: <AnotherPage focus="dabian"/>,
+                    underline: false,
+                },
+                {
                     name: "Hi",
-                    link: <Hi />,
-                    underline: false
-                },
-                {
-                    name: "About",
-                    link: <About />,
-                    underline: false
-                },
-                {
-                    name: "About",
-                    link: <About />,
-                    underline: false
+                    link: <AnotherPage focus="dacong"/>,
+                    underline: false,
                 }
             ]
         };
@@ -40,8 +47,8 @@ export default class Menu extends React.Component {
                 array[i].underline = false;
             }
         }
-        this.setState({menuItems : array});
         ReactDOM.render(obj.link, document.getElementById('mainContent'));
+        this.setState({menuItems : array});
     }
 
     renderMenuItem (obj, i) {

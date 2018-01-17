@@ -1,4 +1,12 @@
 #mainContent {
     width: 100px;
+    background-color: sandybrown;
+}
+
+.bian {
     background-color: yellow;
+}
+
+.cong {
+    background-color: green;
 }
