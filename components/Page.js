@@ -1,5 +1,4 @@
 import React from 'react';
-import Scroll from './Scroll';
 
 export default class Page extends React.Component {
 
