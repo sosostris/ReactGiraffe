@@ -10,6 +10,7 @@ export default class Menu extends React.Component {
     constructor(props) {
         super(props);
         this.renderMenuItem = this.renderMenuItem.bind(this);
+        this.handleScroll = this.handleScroll.bind(this);
 
         this.state = {
 
@@ -75,6 +76,37 @@ export default class Menu extends React.Component {
             </div>
         )
     }
+
+    componentDidMount () {
+        window.addEventListener('scroll', this.handleScroll);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll(event) {
+        var scrollY = window.pageYOffset;
+        var menuItems = this.state.menuItems;
+        if (scrollY < 740) {
+            this.updateUnderlineWhenScrolling(menuItems, 1);
+        } else {
+            this.updateUnderlineWhenScrolling(menuItems, 2);
+        }
+        this.setState({menuItems:menuItems});
+    }
+
+    updateUnderlineWhenScrolling(array, n) {
+        for (var i=0; i<array.length; i++) {
+            if (i===n) {
+                array[i].underline = true;
+            } else {
+                array[i].underline = false;
+            }
+        }
+    }
+
+
 
     render () {
         return (

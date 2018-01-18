@@ -4,6 +4,10 @@ import About from './About';
 
 export default class Page extends React.Component {
 
+    constructor(props) {
+        super(props);
+    }
+
     render () {
         return (
             <div>
@@ -21,11 +25,23 @@ export default class Page extends React.Component {
     }
 
     componentDidMount () {
+        window.addEventListener('scroll', this.handleScroll);
         this.scrollToFocus();
     }
 
     componentDidUpdate () {
         this.scrollToFocus();
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll(event) {
+        var scrollX = window.pageXOffset;
+        var scrollY = window.pageYOffset;
+
+        console.log(scrollY);
     }
 
     scrollToFocus () {

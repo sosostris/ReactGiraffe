@@ -1,2 +1,5 @@
 node_modules/
 .idea/
+resources/json/
+.DS_Store
+package-lock.json
